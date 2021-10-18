@@ -1,0 +1,177 @@
+@import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+@import url(http://fonts.googleapis.com/css?family=Calibri:400,300,700);
+
+
+
+fieldset,
+label {
+    margin: 0;
+    padding: 0
+}
+
+
+.rating {
+    border: none;
+    margin-right: 49px
+}
+
+.myratings {
+    font-size: 85px;
+    color: green
+}
+
+.rating>[id^="star"] {
+    display: none
+}
+
+.rating>label:before {
+    margin: 5px;
+    font-size: 1.5em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005"
+}
+
+.rating>.half:before {
+    content: "\f089";
+    position: absolute
+}
+
+.rating>label {
+    color: #ddd;
+    float: right
+}
+
+.rating>[id^="star"]:checked~label,
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+    color: #FFD700
+}
+
+.rating>[id^="star"]:checked+label:hover,
+.rating>[id^="star"]:checked~label:hover,
+.rating>label:hover~[id^="star"]:checked~label,
+.rating>[id^="star"]:checked~label:hover~label {
+    color: #FFED85
+}
+
+.reset-option {
+    display: none
+}
+
+.reset-button {
+    margin: 6px 12px;
+    background-color: rgb(255, 255, 255);
+    text-transform: uppercase
+}
+
+fieldset#fieldsetRating {
+    margin-right: 362px;
+}
+
+.checked {
+    color: #FFED85;
+}
+@media all and (max-width: 769px) {
+    fieldset#fieldsetRating {
+        width: 162px;
+    }
+ }
+ 
+ @media screen and (max-width: 415px) {
+    p.font-weight-normal.thuonghieu {
+        width: 335px;
+    }
+    /* div#addtocard {
+        margin-top: 10px;
+    } */
+    hr.horiprice {
+        width: 322px;
+    }
+    h3#productName {
+        width: 360px;
+    }
+    .bg-gray.py-2.px-3.mt-4 {
+        width: 322px;
+    }
+    .col-12 {
+        width: 355px;
+    }
+    img#productImage {
+        width: 322px;
+    }
+    
+ }
+
+
+@media all and (max-width: 375px) {
+    .mt-4{
+        width: 322px;
+    }
+    p.font-weight-normal.thuonghieu {
+        width: 335px;
+    }
+    hr.horiprice {
+        width: 318px;
+    }
+    h3#productName {
+        width: 360px;
+    }
+    div#addtocard {
+        margin-top: 10px;
+    }
+    img#productImage {
+        width: 322px;
+    }
+ }
+
+ @media all and (max-width: 360px) {
+    .mt-4{
+        width: 322px;
+    }
+    p.font-weight-normal.thuonghieu {
+        width: 300px;
+    }
+    hr.horiprice {
+        width: 300px;
+    }
+    h3#productName {
+        width: 300px;
+    }
+    div#addtocard {
+        margin-top: 10px;
+    }
+    img#productImage {
+        width: 300px;
+    }
+    .bg-gray.py-2.px-3.mt-4 {
+        width: 300px;
+    }
+ }
+
+ @media all and (max-width: 320px) {
+    .mt-4{
+        width: 322px;
+    }
+    p.font-weight-normal.thuonghieu {
+        width: 270px;
+    }
+    hr.horiprice {
+        width: 260px;
+    }
+    h3#productName {
+        width: 260px;
+    }
+    div#addtocard {
+        margin-top: 10px;
+    }
+    img#productImage {
+        width: 260px;
+    }
+    .bg-gray.py-2.px-3.mt-4 {
+        width: 260px;
+    }
+    .row.mt-4.mx-auto {
+        width: 295px;
+    }
+ }

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Details</title>
+    <!-- Google Font: Source Sans Pro -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"> -->
+
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> -->
+
+    <link rel="stylesheet" href="./dist/css/index.css">
+    <!-- <link rel="stylesheet" href="./dist/css/style.css"> -->
+    <link rel="stylesheet" href="./dist/css/chitietsanpham.css">
+    <link rel="shortcut icon" href="product_image/favicon (1).ico">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="./plugins/fontawesome-free/css/all.min.css">
+
+    <link rel='stylesheet' href='./dist/css/woocommerce-layout.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='./dist/css/woocommerce-smallscreen.css' type='text/css' media='only screen and (max-width: 768px)' />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+</head>
+
+<body class="hold-transition layout-top-nav">
+    <!-- Body content -->
+    <div class="wrapper">
+        <div class="container">
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-light navbar-white fixed-top">
+                <!-- Left navbar links -->
+                <div class="container">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="./product_image/W1.JPG" alt="AdminLTE Logo" class="brand-image"> &nbsp;&nbsp;
+                        <h3 class="brand-text font-weight-light d-inline">WatchShop</h3>
+                    </a>
+                    <marquee style="margin: 10px 0 6px 40px;width: 60%;color :black;" direction="left">Chào mừng bạn đến với Shop 24h - Thế giới đồng hồ số 1 Việt Nam</marquee>
+                    <!-- Right navbar links -->
+                    <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+                        <!-- Messages Dropdown Menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="cart.html">
+                                <i class="fas fa-cart-plus" id="cart"></i>
+                                <!-- <span class="badge badge-danger navbar-badge">3</span> -->
+                            </a>
+                        </li>
+                        <!-- Notifications Dropdown Menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown">
+                                <i class="fas fa-bell"></i>
+                                <!-- <span class="badge badge-warning navbar-badge">15</span> -->
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                                <span class="dropdown-header">15 Notifications</span>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-envelope mr-2"></i> 4 new messages
+                                    <span class="float-right text-muted text-sm">3 mins</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-users mr-2"></i> 8 friend requests
+                                    <span class="float-right text-muted text-sm">12 hours</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-file mr-2"></i> 3 new reports
+                                    <span class="float-right text-muted text-sm">2 days</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown" id="userLogin">
+                            <a class="nav-link" data-widget="control-sidebar" data-slide="true" role="button" data-toggle="dropdown" id="username">
+                                <i class="fas fa-user mr-2"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" id="logindiv">
+                                <span class="dropdown-header">Thông tin của tôi</span>
+
+                                <div class="dropdown-divider"></div>
+                                <a href="login.html" class="dropdown-item">
+                                    <i class="fas fa-file mr-2"></i>Đăng nhập
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Breadcrumb -->
+            <div class="content-header heightSlide">
+                <div class="row mb-1">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 allproduct">Details Product</h1>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active">Details Product</li>
+                        </ol>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- Main content -->
+            <section class="content card chitiet">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <!-- <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review
+                            </h3> -->
+                        <div class="col-12">
+                            <img src="" class="product-image" alt="Product Image" id="productImage">
+                        </div>
+                        <!-- <div class="col-12 product-image-thumbs">
+                                <div class="product-image-thumb active"><img src="../../dist/img/prod-1.jpg"
+                                        alt="Product Image"></div>
+                                <div class="product-image-thumb"><img src="../../dist/img/prod-2.jpg"
+                                        alt="Product Image"></div>
+                                <div class="product-image-thumb"><img src="../../dist/img/prod-3.jpg"
+                                        alt="Product Image"></div>
+                                <div class="product-image-thumb"><img src="../../dist/img/prod-4.jpg"
+                                        alt="Product Image"></div>
+                                <div class="product-image-thumb"><img src="../../dist/img/prod-5.jpg"
+                                        alt="Product Image"></div>
+                            </div> -->
+                    </div>
+                    <div class="col-12 col-sm-6">
+                        <h3 class="my-3" id="productName"></h3>
+                        <fieldset class="rating starmove" id="fieldsetRating">
+                            <input type="radio" id="star5" name="rating" value="5" disabled />
+                            <label class="full" for="star5" title="Awesome - 5 stars"></label>
+
+                            <input type="radio" id="star4half" name="rating" value="4.5" disabled />
+                            <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+
+                            <input type="radio" id="star4" name="rating" value="4" disabled />
+                            <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+
+                            <input type="radio" id="star3half" name="rating" value="3.5" disabled />
+                            <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+
+                            <input type="radio" id="star3" name="rating" value="3" disabled />
+                            <label class="full" for="star3" title="Meh - 3 stars"></label>
+
+                            <input type="radio" id="star2half" name="rating" value="2.5" disabled />
+                            <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+
+                            <input type="radio" id="star2" name="rating" value="2" disabled />
+                            <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+
+                            <input type="radio" id="star1half" name="rating" value="1.5" disabled />
+                            <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+
+                            <input type="radio" id="star1" name="rating" value="1" disabled />
+                            <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+
+                            <input type="radio" id="starhalf" name="rating" value="0.5" disabled />
+                            <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+
+                            <input type="radio" class="reset-option" name="rating" value="reset" />
+                        </fieldset>
+
+                        <p class="font-weight-normal thuonghieu">
+                            <span>Mã hàng: </span>
+                            <span id="productCode"></span> &nbsp; &#124; &nbsp;
+                            <span>Thương Hiệu: </span>
+                            <span id="productVendor" class="text-danger font-weight-bold"></span> &nbsp; &#124; &nbsp;
+                            <span id="rateLength"></span>
+                        </p>
+                        <p class="font-weight-normal thuonghieu">
+                            <h5>Tiện ích</h5>
+                            <li>Cho bạn biết thời gian!</li>
+                            <li>Phụ kiện thời trang cho nam và nữ.</li>
+                            <li> Vật sưu tầm.</li>
+                            <li>Dấu hiệu trưởng thành.</li>
+                            <li>Tổ chức thời gian.</li>
+                            <li>Một công cụ nhiều chức năng.</li>
+                        </p>
+                        <hr class="horiprice">
+                        <div class="bg-gray py-2 px-3 mt-4">
+                            <h2 class="mb-0" id="price">
+
+                            </h2>
+                        </div>
+                        <div class="mt-4">
+                            <div class="btn btn-danger btn-lg themvaogio" id="addtocard">
+                                <i class="fas fa-cart-plus fa-lg mr-2"></i> Buy Now
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4  mx-auto">
+                    <nav class="w-100">
+                        <div class="nav nav-tabs" id="product-tab" role="tablist">
+                            <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Description</a>
+                        </div>
+                    </nav>
+                    <div class="tab-content p-3" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab"> </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card" id="loadRate">
+                        <h5 class="mt-2 ml-2">Đánh giá sản phẩm</h5>
+ 
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 otherProduct">
+                <div class="col-sm-12">
+                    <div class="row" id="loadContent">
+                        <h3>Other Products</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="bg-white">
+            <div class=" bg-light py-4">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-lg-3 text-center">
+                            <p class="text-uppercase font-weight-bold mb-4">Watch </p>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><a href="#" class="fab fa-facebook-square"> Facebook</a></li>
+                                <li class="mb-2"><a href="#" class="fab fa-instagram-square"> Intagram</a></li>
+                                <li class="mb-2"><a href="#" class="fab fa-twitter"> Tiwtter</a></li>
+                                <li class="mb-2"><a href="#" class="fab fa-google"> Google</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 text-center">
+                            <h6 class="text-uppercase font-weight-bold mb-4">Shop</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><a href="#" class="text-muted">For Women</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">For Men</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Stores</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Our Blog</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 text-center">
+                            <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
+                                <li class="mb-2"><a href="#" class="text-muted">Our Products</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 text-center">
+                            <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+                            <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.
+                            </p>
+                            <div class="p-1 rounded border">
+                                <div class="input-group">
+                                    <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
+                                    <div class="input-group-append">
+                                        <button id="button-addon1" type="submit" class="btn btn-link"><i
+                                                class="fa fa-paper-plane"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+    <!-- JS -->
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- Bootstrap 4 -->
+    <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- File js -->
+    <script src="js/chitietsanpham.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+    <script src='./dist/js/masonry.pkgd.min.js'></script>
+    ​
+</body>
+
+</html>

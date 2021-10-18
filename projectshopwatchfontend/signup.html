@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Đăng ký</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="shortcut icon" href="product_image/favicon (1).ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="./dist/css/signup.css">
+
+</head>
+
+<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">Đăng Ký Tài Khoản</h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-9 col-lg-6">
+					<div class="login-wrap">
+						
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<input id="firstname" type="text" class="form-control" placeholder="Tên">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<input id="lastname" type="text" class="form-control" placeholder="Họ">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<input id="email" type="text" class="form-control" placeholder="Email">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<input id="phone" type="text" class="form-control" placeholder="Số điện thoại">
+									</div>
+								</div>
+								
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<select name="calc_shipping_provinces" required="" 
+											class="form-control custom-select" id="citySelect">
+                                        		<option value="">Tỉnh / Thành phố</option>
+                      					</select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<select name="calc_shipping_district" required="" class="form-control custom-select"
+											id="stateSelect">
+											<option value="">Quận / Huyện</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group mb-4">
+										<input id="address" type="text" class="form-control" placeholder="Địa chỉ">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group mb-4">
+										<input id="username" type="text" class="form-control" placeholder="Tên đăng nhập">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<input id="password" type="password" class="form-control" placeholder="Password">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group mb-4">
+										<input id="cfmpassword" type="password" class="form-control" placeholder="Confirm Password">
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group d-flex">
+										<button id="btn-signup" class="btn btn-outline-success rounded submit p-3">Đăng ký</button>
+									</div>
+								</div>
+							</div>
+
+						<div class="w-100 social-wrap">
+							<p class="mt-4">Bạn đã có tài khoản! <a href="login.html">Đăng nhập</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<script src="./plugins/jquery/jquery.min.js"></script>
+	<script src="./plugins/bootstrap/jslogin/poppersignup.js"></script>
+	<script src="./plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+	<script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'></script>
+
+    <!-- File js -->
+	<script src="js/sigup.js"></script>
+
+
+	<!-- load select city and state -->
+	<script>
+        if (address_2 = localStorage.getItem('address_2_saved')) {
+            $('select[name="calc_shipping_district"] option').each(function () {
+                if ($(this).text() == address_2) {
+                    $(this).attr('selected', '')
+                }
+            })
+            $('input.billing_address_2').attr('value', address_2)
+        }
+        if (district = localStorage.getItem('district')) {
+            $('select[name="calc_shipping_district"]').html(district)
+            $('select[name="calc_shipping_district"]').on('change', function () {
+                var target = $(this).children('option:selected')
+                target.attr('selected', '')
+                $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+                address_2 = target.text()
+                $('input.billing_address_2').attr('value', address_2)
+                district = $('select[name="calc_shipping_district"]').html()
+                localStorage.setItem('district', district)
+                localStorage.setItem('address_2_saved', address_2)
+            })
+        }
+        $('select[name="calc_shipping_provinces"]').each(function () {
+            var $this = $(this),
+                stc = ''
+            c.forEach(function (i, e) {
+                e += +1
+                stc += '<option value=' + e + '>' + i + '</option>'
+                $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
+                if (address_1 = localStorage.getItem('address_1_saved')) {
+                    $('select[name="calc_shipping_provinces"] option').each(function () {
+                        if ($(this).text() == address_1) {
+                            $(this).attr('selected', '')
+                        }
+                    })
+                    $('input.billing_address_1').attr('value', address_1)
+                }
+                $this.on('change', function (i) {
+                    i = $this.children('option:selected').index() - 1
+                    var str = '',
+                        r = $this.val()
+                    if (r != '') {
+                        arr[i].forEach(function (el) {
+                            str += '<option value="' + el + '">' + el + '</option>'
+                            $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>' + str)
+                        })
+                        var address_1 = $this.children('option:selected').text()
+                        var district = $('select[name="calc_shipping_district"]').html()
+                        localStorage.setItem('address_1_saved', address_1)
+                        localStorage.setItem('district', district)
+                        $('select[name="calc_shipping_district"]').on('change', function () {
+                            var target = $(this).children('option:selected')
+                            target.attr('selected', '')
+                            $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+                            var address_2 = target.text()
+                            $('input.billing_address_2').attr('value', address_2)
+                            district = $('select[name="calc_shipping_district"]').html()
+                            localStorage.setItem('district', district)
+                            localStorage.setItem('address_2_saved', address_2)
+                        })
+                    } else {
+                        $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>')
+                        district = $('select[name="calc_shipping_district"]').html()
+                        localStorage.setItem('district', district)
+                        localStorage.removeItem('address_1_saved', address_1)
+                    }
+                })
+            })
+        })
+    </script>
+
+</body>
+
+</html>

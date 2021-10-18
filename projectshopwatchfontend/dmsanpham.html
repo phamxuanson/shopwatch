@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shop</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./dist/css/index.css">
+    <!-- <link rel="stylesheet" href="./dist/css/style.css"> -->
+    <link rel="shortcut icon" href="product_image/favicon (1).ico">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+</head>
+
+<body class="hold-transition layout-top-nav">
+    <!-- Body content -->
+    <div class="wrapper">
+        <div class="container">
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-light navbar-white fixed-top">
+                <!-- Left navbar links -->
+                <div class="container">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="./product_image/W1.JPG" alt="AdminLTE Logo" class="brand-image"> &nbsp;&nbsp;
+                        <h3 class="brand-text font-weight-light d-inline">WatchShop</h3>
+                    </a>
+                    <marquee style="margin: 10px 0 6px 40px;width: 60%;color :black;" direction="left">Chào mừng bạn đến với Shop 24h - Thế giới đồng hồ số 1 Việt Nam</marquee>
+                    <!-- Right navbar links -->
+                    <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+                        <!-- Messages Dropdown Menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="cart.html">
+                                <i class="fas fa-cart-plus" id="cart"></i>
+                                <!-- <span class="badge badge-danger navbar-badge">3</span> -->
+                            </a>
+                        </li>
+                        <!-- Notifications Dropdown Menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown">
+                                <i class="fas fa-bell"></i>
+                                <!-- <span class="badge badge-warning navbar-badge">15</span> -->
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                                <span class="dropdown-header">15 Notifications</span>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-envelope mr-2"></i> 4 new messages
+                                    <span class="float-right text-muted text-sm">3 mins</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-users mr-2"></i> 8 friend requests
+                                    <span class="float-right text-muted text-sm">12 hours</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-file mr-2"></i> 3 new reports
+                                    <span class="float-right text-muted text-sm">2 days</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown" id="userLogin">
+                            <a class="nav-link" data-widget="control-sidebar" data-slide="true" role="button" data-toggle="dropdown" id="username">
+                                <i class="fas fa-user mr-2"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" id="logindiv">
+                                <span class="dropdown-header">Thông tin của tôi</span>
+
+                                <div class="dropdown-divider"></div>
+                                <a href="login.html" class="dropdown-item">
+                                    <i class="fas fa-file mr-2"></i>Đăng nhập
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- Breadcrumb -->
+            <div class="content-header heightSlide">
+                <div class="row mb-1">
+                    <div class="col-sm-6">
+                        <h1 class="m-0 allproduct">All Product</h1>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active">All Product</li>
+                        </ol>
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- Carousel-inner -->
+            <div class="row heightSlide">
+                <div class="col-sm-2">
+                    <div class="row card mx-auto">
+                        <div class="col-sm-12">
+                            <div class="list-group">
+                                <h5>
+                                    Categories
+                                </h5>
+                                <a href="#" class="text-dark" id="1">Nam</a>
+                                <a href="#" class="text-dark" id="2">Nữ</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row heightSlide card mx-auto">
+                        <div class="col-sm-12">
+                            <h5>
+                                Brand
+                            </h5>
+                            <input type="radio" name="brand" value="Casio" class="brand">&nbsp;
+                            <span>Casio</span>
+                            <br>
+                            <input type="radio" name="brand" value="Orient" class="brand">&nbsp;
+                            <span>Orient</span>
+                            <br>
+                            <input type="radio" name="brand" value="DanielKlein" class="brand">&nbsp;
+                            <span>Daniel Klein</span>
+                            <br>
+                            <input type="radio" name="brand" value="Festina" class="brand">&nbsp;
+                            <span>Festina</span>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="row heightSlide card mx-auto">
+                        <div class="col-sm-12">
+                            <h5>
+                                Price
+                            </h5>
+                            <input type="radio" name="price" value="3000000" class="priceCheck" id="duoi2">&nbsp;
+                            <span>0 - 3.000.000</span>
+                            <br>
+                            <input type="radio" name="price" value="3000000" class="priceCheck" id="tren2">&nbsp;
+                            <span>3.000.000 - max</span>
+                        </div>
+                    </div>
+                    <div class="row heightSlide">
+                        <div class="col-sm-12">
+                            <button class="btn btn-primary text-white" id="filter">Lọc</button>
+                            <button class="btn btn-danger text-white" id="noFilter">Bỏ Lọc</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-10">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row anhBiaDh">
+                                <img src="product_image/anhbiadh.JPG" alt="#">
+                            </div>
+                            <div class="row" id="loadContent">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- pagination -->
+                <div class="row mt-5">
+                    <div class="col-sm-12">
+                        <div class="card-tools float-right">
+                            <ul class="pagination" id="allProduct">
+                            </ul>
+                            <ul class="pagination" id="vendor">
+                            </ul>
+                            <ul class="pagination" id="pricedown">
+                            </ul>
+                            <ul class="pagination" id="priceup">
+                            </ul>
+                            <ul class="pagination" id="vendorpricedown">
+                            </ul>
+                            <ul class="pagination" id="vendorpriceup">
+                            </ul>
+                            <ul class="pagination" id="nam">
+                            </ul>
+                            <ul class="pagination" id="nu">
+                            </ul>
+                            <ul class="pagination" id="pricedownline">
+                            </ul>
+                            <ul class="pagination" id="priceupline">
+                            </ul>
+                            <ul class="pagination" id="vendorline">
+                            </ul>
+                            <ul class="pagination" id="vendorpricedownline">
+                            </ul>
+                            <ul class="pagination" id="vendorpriceupline">
+                        </div>
+                    </div>
+                </div>
+                <!-- pagination -->
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="bg-white">
+        <div class=" bg-light py-4">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-3 text-center">
+                        <p class="text-uppercase font-weight-bold mb-4">Watch </p>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="#" class="fab fa-facebook-square"> Facebook</a></li>
+                            <li class="mb-2"><a href="#" class="fab fa-instagram-square"> Intagram</a></li>
+                            <li class="mb-2"><a href="#" class="fab fa-twitter"> Tiwtter</a></li>
+                            <li class="mb-2"><a href="#" class="fab fa-google"> Google</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <h6 class="text-uppercase font-weight-bold mb-4">Shop</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="#" class="text-muted">For Women</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted">For Men</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted">Stores</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted">Our Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted">Our Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+                        <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At itaque temporibus.
+                        </p>
+                        <div class="p-1 rounded border">
+                            <div class="input-group">
+                                <input type="email" placeholder="Enter your email address" aria-describedby="button-addon1" class="form-control border-0 shadow-0">
+                                <div class="input-group-append">
+                                    <button id="button-addon1" type="submit" class="btn btn-link"><i
+                                            class="fa fa-paper-plane"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <!-- JS -->
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- Bootstrap 4 -->
+    <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- File js -->
+    <script src="js/dmsanpham.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+    <script src='./dist/js/masonry.pkgd.min.js'></script>
+    ​
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+$("#bootstrap-switch").bootstrapSwitch('state', $("#bootstrap-switch").prop('checked'));

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shop</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./dist/css/index.css">
+    <link rel="stylesheet" href="./dist/css/infororder.css">
+    <!-- <link rel="stylesheet" href="./dist/css/style.css"> -->
+    <link rel="shortcut icon" href="product_image/favicon (1).ico">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+<style>
+    
+</style>
+
+<body class="hold-transition layout-top-nav">
+    <!-- Body content -->
+    <div class="wrapper">
+        <div class="container">
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-light navbar-white fixed-top">
+                <!-- Left navbar links -->
+                <div class="container">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="./product_image/W1.JPG" alt="AdminLTE Logo" class="brand-image">
+                        &nbsp;&nbsp;
+                        <h3 class="brand-text font-weight-light d-inline">WatchShop</h3>
+                    </a>
+                    <marquee style="margin: 10px 0 -2px 0;width: 100%;color :black;" direction="left">Chào mừng bạn
+                        đến với Shop 24h - Thế giới đồng hồ số 1 Việt Nam</marquee>
+                    <!-- Right navbar links -->
+                    <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+                        <!-- Messages Dropdown Menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="cart.html">
+                                <i class="fas fa-cart-plus"></i>
+                                <!-- <span class="badge badge-danger navbar-badge">3</span> -->
+                            </a>
+                        </li>
+
+                        <!-- Notifications Dropdown Menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown">
+                                <i class="fas fa-bell"></i>
+                                <!-- <span class="badge badge-warning navbar-badge">15</span> -->
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                                <span class="dropdown-header">15 Notifications</span>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-envelope mr-2"></i> 4 new messages
+                                    <span class="float-right text-muted text-sm">3 mins</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-users mr-2"></i> 8 friend requests
+                                    <span class="float-right text-muted text-sm">12 hours</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item">
+                                    <i class="fas fa-file mr-2"></i> 3 new reports
+                                    <span class="float-right text-muted text-sm">2 days</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown" id="userLogin">
+                            <a class="nav-link" data-widget="control-sidebar" data-slide="true" role="button"
+                                data-toggle="dropdown" id="username">
+                                <i class="fas fa-user mr-2"></i>
+
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" id="logindiv">
+                                <span class="dropdown-header">Thông tin của tôi</span>
+
+                                <div class="dropdown-divider"></div>
+                                <a href="signin.html" class="dropdown-item">
+                                    <i class="fas fa-file mr-2"></i>Đăng nhập
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 bg-custom p-0 d-flex text-center  justify-content-center flex-column display-none">
+                    <h2 class="mb-2">Liên hệ</h2>
+                    <div class="info">
+                        <div class="logo">
+                            <a class="nav-link" href="index.html">
+                                <img src="product_image/favicon (1).ico" alt="logo">
+                            </a>
+                        </div>
+                        <ul>
+                            <li>34-Giải Phóng</li>
+                            <li>shopwatch@gmail.com</li>
+                            <li>0999.999.999</li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-md-8 p-0 bg-white pt-4 pb-4">
+                    <h2 class="pl-4">Gửi thông tin đặt hàng</h2>
+                    <form class="w-100 p-4" action="#">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <h5 id="loadTongTien">
+
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="firstName" placeholder="First Name"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="lastName" placeholder="Last Name"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="number" class="form-control" id="phoneNumber" placeholder="Phonenumber"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="address" placeholder="Address" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="city" placeholder="City" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="state" placeholder="State" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" id="country" placeholder="Country" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mb-3">
+                                    <textarea class="form-control" id="message" placeholder="Message" required
+                                        rows="3"></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-custom btn-lg btn-block mt-3" id="datHang">Đặt
+                            hàng</button>
+                    </form>
+                </div>
+                <!-- <div class="col-md-1 bg-success display-none ">
+                    <div class="social-icons">
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-pinterest"></i>
+                        <i class="fa fa-linkedin"></i>
+                    </div>
+                </div> -->
+                <div class="col-md-1">
+                    <div class="social-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-google"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-thanhToan">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Đặt hàng thành công</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row form-group">
+                        <label for="lb">Cảm ơn bạn đã lựa chọn sản phẩm của chúng tôi</label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- toast -->
+    <div class="toast" style="position: absolute; top: 0; right: 0;">
+        <div class="toast-header">
+            <strong class="mr-auto">Thông tin</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body" id="toatBody">
+
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="bg-white">
+        <div class=" bg-light py-4">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-lg-3 text-center">
+                        <p class="text-uppercase font-weight-bold mb-4">Watch </p>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="#" class="fab fa-facebook-square"> Facebook</a></li>
+                            <li class="mb-2"><a href="#" class="fab fa-instagram-square"> Intagram</a></li>
+                            <li class="mb-2"><a href="#" class="fab fa-twitter"> Tiwtter</a></li>
+                            <li class="mb-2"><a href="#" class="fab fa-google"> Google</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <h6 class="text-uppercase font-weight-bold mb-4">Shop</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="#" class="text-muted">For Women</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted">For Men</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted">Stores</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted">Our Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <h6 class="text-uppercase font-weight-bold mb-4">Company</h6>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a href="#" class="text-muted">Login</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted">Register</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted">Wishlist</a></li>
+                            <li class="mb-2"><a href="#" class="text-muted">Our Products</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 text-center">
+                        <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+                        <p class="text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At
+                            itaque
+                            temporibus.</p>
+                        <div class="p-1 rounded border">
+                            <div class="input-group">
+                                <input type="email" placeholder="Enter your email address"
+                                    aria-describedby="button-addon1" class="form-control border-0 shadow-0">
+                                <div class="input-group-append">
+                                    <button id="button-addon1" type="submit" class="btn btn-link"><i
+                                            class="fa fa-paper-plane"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    </div>
+
+    <!-- JS -->
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap 4 -->
+    <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+    <script src='./dist/js/masonry.pkgd.min.js'></script>
+    ​
+
+</body>
+<script>
+    const baseUrlApi = "http://localhost:8088";
+    var oldItems = JSON.parse(localStorage.getItem('itemsArray')) || [];
+    //console.log(oldItems);
+
+    var formatter = new Intl.NumberFormat('vi-VN', {
+        style: 'currency',
+        currency: 'VND'
+    });
+
+    var sum = 0;
+    function loadTongTien() {
+        for (i = 0; i < oldItems.length; i++) {
+            sum += parseInt(oldItems[i].product_price) * oldItems[i].qty_product;
+            $("#loadTongTien").html("Tổng tiền: " + formatter.format(sum));
+
+        }
+    }
+    loadTongTien();
+
+    $("#datHang").on("click", function () {
+        if (oldItems.length == 0) {
+            alert("Bạn chưa có sản phẩm nào!");
+        }
+        else {
+            insertData();
+        }
+    })
+
+    function insertData() {
+
+        var fName = $("#firstName").val().trim();
+        var lName = $("#lastName").val().trim();
+        var email = $("#email").val().trim();
+        var phoneNumber = $("#phoneNumber").val();
+        var address = $("#address").val().trim();
+        var city = $("#city").val().trim();
+        var state = $("#state").val().trim();
+        var country = $("#country").val().trim();
+        var message = $("#message").val().trim();
+
+        if (validateData()) {
+            customer = {
+                "lastName": lName,
+                "firstName": fName,
+                "email": email,
+                "phoneNumber": phoneNumber,
+                "address": address,
+                "city": city,
+                "state": state,
+                "country": country,
+                "message": message,
+            }
+
+
+            $.ajax({
+                url: "http://localhost:8088/customer/customerbyphone/" + customer.phoneNumber,
+                type: 'GET',
+                dataType: 'json',
+                async: false,
+                success: function (res) {
+                    //console.log(res);
+                    // B2 User da ton tai -> Update User 
+                    updateCustomer(res.id);
+                    // them mới order
+                    createOrder(res.id);
+                    // thêm mới orderdetails
+                    // var orderId = res.orders(res.orders.length - 1).id
+                    // console.log(orderId);
+                    // createOrderDetails(res.orders(paramRes.orders.length - 1).id);
+                },
+                error: function (ajaxContext) {
+                    // B3 Check status = 404, Customer chu ton tai -> Create User
+                    alert(ajaxContext.responseText);
+                    // B4+5
+                }
+            });
+            // B4+5 Ham tao order va order detail
+
+        }
+    }
+
+    function resetForm() {
+        $("#firstName").val("");
+        $("#lastName").val("");
+        $("#email").val("");
+        $("#phoneNumber").val("");
+        $("#address").val("");
+        $("#city").val("");
+        $("#country").val("");
+        $("#state").val("");
+        $("#message").val("");
+    }
+
+    function updateCustomer(id) {
+        var fName = $("#firstName").val().trim();
+        var lName = $("#lastName").val().trim();
+        var email = $("#email").val().trim();
+        var phoneNumber = $("#phoneNumber").val();
+        var address = $("#address").val().trim();
+        var city = $("#city").val().trim();
+        var state = $("#state").val().trim();
+        var country = $("#country").val().trim();
+        var message = $("#message").val().trim();
+
+        customer = {
+            "lastName": lName,
+            "firstName": fName,
+            "email": email,
+            "phoneNumber": phoneNumber,
+            "address": address,
+            "city": city,
+            "state": state,
+            "country": country,
+            "message": message,
+        }
+
+        $.ajax({
+            url: "http://localhost:8088/customers/" + id,
+            type: 'PUT',
+            contentType: 'application/json;charset=UTF-8',
+            data: JSON.stringify(customer),
+            dataType: 'json',
+            success: function (res) {
+                // console.log(res);
+            },
+            error: function (ajaxContext) {
+                alert(ajaxContext.responseText);
+            }
+
+        });
+    }
+
+    var order = {
+        status: "Open",
+        comments: "ok"
+    }
+
+    /** Hàm tạo dữ liệu order detail */
+    function getOrerDetailData() {
+        var vOrderDetails = new Object();
+        for (var bI = 0; bI < oldItems.length; bI++) {
+            vOrderDetails.productId = oldItems[bI].product_id;
+            vOrderDetails.quantityOrder = oldItems[bI].qty_product;
+            vOrderDetails.priceEach = oldItems[bI].qty_product * oldItems[bI].product_price;
+        }
+        return vOrderDetails;
+    }
+
+    function createOrder(id) {
+        $.ajax({
+            url: baseUrlApi + "/customers/" + id + "/order",
+            type: 'POST',
+            contentType: 'application/json;charset=UTF-8',
+            data: JSON.stringify(order),
+            dataType: 'json',
+            success: function (res) {
+                console.log(res);
+                createOrderDetails(res.id);
+            },
+            error: function (ajaxContext) {
+                alert(ajaxContext);
+            }
+        });
+    }
+
+    function createOrderDetails(id) {
+        var vOrderDetailObject = getOrerDetailData();
+        var vProductId = vOrderDetailObject.productId;
+        $.ajax({
+            url: baseUrlApi + "/orders/"+ id + "/products/" + vProductId + "/orderdetail",
+            type: "POST",
+            contentType: "application/json;charset=UTF-8",
+            data: JSON.stringify(vOrderDetailObject),
+            dataType: "json",
+            success: function (paramRes) {
+                console.log(paramRes);
+            },
+            error: function (xhr) {
+                alert(xhr.status);
+            }
+        })
+    }
+
+    function validateData() {
+        var fName = $("#firstName").val().trim();
+        var lName = $("#lastName").val().trim();
+        var email = $("#email").val().trim();
+        var phonNumber = $("#phoneNumber").val().trim();
+        var address = $("#address").val().trim();
+        var city = $("#city").val().trim();
+        var state = $("#state").val().trim();
+        var country = $("#country").val().trim();
+        var message = $("#message").val().trim();
+
+        var check = false;
+
+        if (lName === "") {
+            alert("Bạn chưa thêm lastName ");
+            return check;
+        }
+        if (fName === "") {
+            alert("bạn phải nhập first name");
+            return check;
+        }
+        if (phoneNumber === "") {
+            alert("bạn phải nhập phoneNumber");
+            return check;
+        }
+        if (email === "") {
+            alert("bạn phải nhập email");
+            return check;
+        }
+        if (message === "") {
+            alert("bạn phải nhập message");
+            return check;
+        }
+        if (address === "") {
+            alert("bạn phải nhập address");
+            return check;
+        }
+        if (city === "") {
+            alert("bạn phải nhập city");
+            return check;
+        }
+        if (state === "") {
+            alert("bạn phải nhập state");
+            return check;
+        }
+        if (country === "") {
+            alert("bạn phải nhập country");
+            return check;
+        }
+        check = true;
+        return check;
+    }
+</script>
+
+</html>

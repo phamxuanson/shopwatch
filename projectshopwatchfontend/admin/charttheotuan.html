@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopwatch Admin</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+
+
+    <!-- <link rel="stylesheet" href="css/adminpage.css"> -->
+
+    <link href="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+
+    <!-- summernote -->
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+
+    <link rel="shortcut icon" href="image/favicon (1).ico">
+</head>
+
+<body class="hold-transition sidebar-mini layout-fixed" id="showBody">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="http://localhost/shop24h/admin/charttheotuan.html" class="nav-link">Home</a>
+                </li>
+            </ul>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Navbar Search -->
+
+                <li class="nav-item dropdown" id="userLogin">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" role="button" data-toggle="dropdown" id="username">
+                        <i class="fas fa-user"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" id="logindiv">
+                        <span class="dropdown-header">Thông tin của tôi</span>
+
+                        <div class="dropdown-divider"></div>
+                        <a href="signin.html" class="dropdown-item">
+                            <i class="fas fa-file mr-2"></i>Đăng nhập
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="http://localhost/shop/adminpage.html" class="brand-link text-center">
+                <span class="brand-text font-weight-light">Admin</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar Menu -->
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+                        <!-- <li class="nav-item">
+                            <a class="nav-link active">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p class="text-left btn text-white">
+                                    Home
+                                </p>
+                            </a>
+                        </li> -->
+                        <!-- <li class="nav-item">
+                            <a class="nav-link" id="openReportOrder">
+                                <i class="nav-icon far fa-flag"></i>
+                                <p class="text-left btn text-white">
+                                    Báo cáo Hóa đơn
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="openReportCustomer">
+                                <i class="nav-icon far fa-flag"></i>
+                                <p class="text-left btn text-white">
+                                    Báo cáo Khách hàng
+                                </p>
+                            </a>
+                        </li> -->
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link ">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Admin
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="customer.html" class="nav-link ">
+                                        <i class="far fa-circle nav-icon "></i>
+                                        <p>Customer</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="productline.html" class="nav-link ">
+                                        <i class="far fa-circle nav-icon "></i>
+                                        <p>Product Line</p>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="rate.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Rate</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="nav-icon fas fa-tasks"></i>
+                                <p class="text-left btn text-white">
+                                    Báo cáo hóa đơn
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="charttheongay.html" class="nav-link" id="openProduct">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Theo ngày</p>
+                                    </a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a href="charttheotuan.html" class="nav-link active" id="openCustomer">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Theo tuần</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <i class="nav-icon fas fa-tasks"></i>
+                                <p class="text-left btn text-white">
+                                    Báo cáo khách hàng
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="charttheokh.html" class="nav-link" id="openProduct">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Lọc theo nhóm khách hàng</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="charttheosomua.html" class="nav-link" id="openCustomer">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Lọc khách hàng theo tổng số đã mua</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- báo cáo order -->
+        <div class="content-wrapper" id="orderReportTab">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>Báo Hóa Đơn</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a>Home</a></li>
+                                <li class="breadcrumb-item active">Báo cáo hóa đơn</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+
+                    <!-- báo cáo order theo tuần -->
+                    <div class="col-sm-12">
+                        <!-- Date range -->
+                        <div class="form-group">
+                            <label>Lọc theo tuần trong năm:</label>
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="far fa-calendar-alt"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control float-right" id="daterangeforweek" name="dates">
+                            </div>
+                            <!-- /.input group -->
+                        </div>
+                        <!-- BAR CHART -->
+                        <div class="card card-info">
+                            <div class="card-header">
+                                <h3 class="card-title">Biểu đồ tổng tiền theo tuần</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart">
+                                    <canvas id="barDateSumWeek" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                    <input type="button" value="Xuất excel" class="btn btn-info" id="exceltotalmoneyeweek">
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                        </div>
+                        <!-- /.card -->
+                    </div>
+                    <!-- theo tuần -->
+                </div>
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- order -->
+
+
+        <footer class="main-footer">
+            <strong>Listen.</strong>
+            <div class="float-right d-none d-sm-inline-block">
+                <b>Version</b> 1.0.0
+            </div>
+        </footer>
+    </div>
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- ChartJS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.js"></script>
+
+    <!-- Summernote -->
+    <script src="plugins/summernote/summernote-bs4.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <!-- moment -->
+    <script src="plugins/moment/moment.min.js"></script>
+
+    <!-- date-range-picker -->
+    <script src="plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="https://adminlte.io/themes/AdminLTE/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    <script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'></script>
+
+    <!-- <script src="dist/js/daterange.js"></script> -->
+
+    <script>
+        if (address_2 = localStorage.getItem('address_2_saved')) {
+            $('select[name="calc_shipping_district"] option').each(function() {
+                if ($(this).text() == address_2) {
+                    $(this).attr('selected', '')
+                }
+            })
+            $('input.billing_address_2').attr('value', address_2)
+        }
+        if (district = localStorage.getItem('district')) {
+            $('select[name="calc_shipping_district"]').html(district)
+            $('select[name="calc_shipping_district"]').on('change', function() {
+                var target = $(this).children('option:selected')
+                target.attr('selected', '')
+                $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+                address_2 = target.text()
+                $('input.billing_address_2').attr('value', address_2)
+                district = $('select[name="calc_shipping_district"]').html()
+                localStorage.setItem('district', district)
+                localStorage.setItem('address_2_saved', address_2)
+            })
+        }
+        $('select[name="calc_shipping_provinces"]').each(function() {
+            var $this = $(this),
+                stc = ''
+            c.forEach(function(i, e) {
+                e += +1
+                stc += '<option value=' + e + '>' + i + '</option>'
+                $this.html('<option value="">Tỉnh / Thành phố</option>' + stc)
+                if (address_1 = localStorage.getItem('address_1_saved')) {
+                    $('select[name="calc_shipping_provinces"] option').each(function() {
+                        if ($(this).text() == address_1) {
+                            $(this).attr('selected', '')
+                        }
+                    })
+                    $('input.billing_address_1').attr('value', address_1)
+                }
+                $this.on('change', function(i) {
+                    i = $this.children('option:selected').index() - 1
+                    var str = '',
+                        r = $this.val()
+                    if (r != '') {
+                        arr[i].forEach(function(el) {
+                            str += '<option value="' + el + '">' + el + '</option>'
+                            $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>' + str)
+                        })
+                        var address_1 = $this.children('option:selected').text()
+                        var district = $('select[name="calc_shipping_district"]').html()
+                        localStorage.setItem('address_1_saved', address_1)
+                        localStorage.setItem('district', district)
+                        $('select[name="calc_shipping_district"]').on('change', function() {
+                            var target = $(this).children('option:selected')
+                            target.attr('selected', '')
+                            $('select[name="calc_shipping_district"] option').not(target).removeAttr('selected')
+                            var address_2 = target.text()
+                            $('input.billing_address_2').attr('value', address_2)
+                            district = $('select[name="calc_shipping_district"]').html()
+                            localStorage.setItem('district', district)
+                            localStorage.setItem('address_2_saved', address_2)
+                        })
+                    } else {
+                        $('select[name="calc_shipping_district"]').html('<option value="">Quận / Huyện</option>')
+                        district = $('select[name="calc_shipping_district"]').html()
+                        localStorage.setItem('district', district)
+                        localStorage.removeItem('address_1_saved', address_1)
+                    }
+                })
+            })
+        })
+
+        const token = getCookie("token");
+        const baseUrlApi = "http://localhost:8088";
+        const baseUrlXampp = "http://localhost/shop24h";
+
+        // xử lí khi không phải admin
+        $("#showBody").prop("class", "hold-transition sidebar-mini layout-fixed hide");
+        if (token === "" || token !== "01699999999") {
+            window.location.href = baseUrlXampp + "/login.html";
+        } else {
+            $("#showBody").prop("class", "hold-transition sidebar-mini layout-fixed");
+        }
+
+        function getCookie(cname) {
+            var name = cname + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        //Hàm setCookie
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getUserInfo(token) {
+            $.ajax({
+                url: baseUrlApi + "/user/userbyphonenumber/" + token,
+                type: 'GET',
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                headers: {
+                    "Authorization": "Bearer " + token
+                },
+                success: function(pRes) {
+                    console.log(pRes);
+                },
+                error: function(pAjaxContext) {
+                    console.log(pAjaxContext.responseText);
+                }
+            });
+        }
+
+        if (token) {
+            $("#logindiv").remove();
+            $("#userLogin").append(
+                `<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right" id="logout">
+            <span class="dropdown-header">Thông tin của tôi</span>
+            <div class="dropdown-divider"></div>
+            <a class="btn dropdown-item" id="btn-logout">
+                <i class="fas fa-file mr-2"></i>Đăng xuất
+            </a>
+        </div>
+          `
+            );
+            //getUserInfo(token);
+        }
+
+        $("#btn-logout").on("click", function() {
+            redirectToLogin();
+        });
+
+
+        function redirectToLogin() {
+            // Trước khi logout cần xóa token đã lưu trong cookie
+            setCookie("token", "", 1);
+            window.location.href = baseUrlXampp + "/login.html";
+        }
+
+        // load dữ liệu ra bảng
+
+        //Date range picker
+        $('#reservation').daterangepicker()
+
+        $('#daterangeforweek').each(function() {
+            $(this).datepicker({
+                autoclose: true,
+                format: " yyyy",
+                viewMode: "years",
+                minViewMode: "years"
+            });
+            $(this).datepicker('clearDates');
+        });
+
+        //========================= load every week =========================
+        var week = [];
+        var sumMoneyWeek = [];
+
+        var d = new Date();
+        var thisYear = d.getFullYear();
+
+        var weekLoadFirst = [];
+        var sumMoneyWeekLoadFirst = [];
+
+        // load ra dữ liệu ra front end khi người dùng chưa lọc
+        $.ajax({
+            url: "http://localhost:8088/order/weekreport/" + thisYear,
+            type: "GET",
+            dataType: 'json',
+            async: false,
+            success: function(res) {
+                console.log(res);
+                for (let index = 0; index < res.length; index++) {
+                    const element = res[index];
+                    weekLoadFirst.push("Tuần " + element[0]);
+                    sumMoneyWeekLoadFirst.push(element[2]);
+                    // console.log(sumMoneyWeekLoadFirst);
+                    // console.log(weekLoadFirst);
+                    // console.log(element[2]);
+                    // areaChartDataOrder.labels.push(element[0]);
+                    // areaChartDataOrder.datasets[0].data.push(element[2]);
+                }
+
+                var areaChartDataOrderWeek = {
+                        labels: weekLoadFirst,
+                        datasets: [{
+                            label: 'Tổng tiền theo từng tuần',
+                            backgroundColor: 'rgba(60,141,188,0.9)',
+                            borderColor: 'rgba(60,141,188,0.8)',
+                            pointRadius: false,
+                            pointColor: '#3b8bba',
+                            pointStrokeColor: 'rgba(60,141,188,1)',
+                            pointHighlightFill: '#fff',
+                            pointHighlightStroke: 'rgba(60,141,188,1)',
+                            data: sumMoneyWeekLoadFirst
+                        }]
+                    }
+                    //-------------
+                    //- BAR CHART -
+                    //-------------
+                var barChartCanvas = $('#barDateSumWeek').get(0).getContext('2d')
+                var barChartData = $.extend(true, {}, areaChartDataOrderWeek)
+                var temp0 = areaChartDataOrderWeek.datasets[0]
+                    // var temp1 = areaChartDataOrder.datasets[1]
+                barChartData.datasets[0] = temp0
+
+                var barChartOptions = {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    datasetFill: false
+                }
+
+                new Chart(barChartCanvas, {
+                    type: 'bar',
+                    data: barChartData,
+                    options: barChartOptions
+                })
+
+
+                var donutData = {
+                    labels: [
+                        'Chrome',
+                        'IE',
+                        'FireFox',
+                        'Safari',
+                        'Opera',
+                        'Navigator',
+                    ],
+                    datasets: [{
+                        data: [700, 500, 400, 600, 300, 100],
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+                    }]
+                }
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+
+        $("#daterangeforweek").on("change", function() {
+            $("#barDateSumWeek").html("");
+            week = [];
+            sumMoneyWeek = [];
+
+            var yearValue = parseInt($("#daterangeforweek").val().trim());
+            $("#exceltotalmoneyeweek").on("click", function() {
+                window.location.href = "http://localhost:8088/order/yearreportexcell/" + yearValue;
+            });
+
+            $.ajax({
+                url: "http://localhost:8088/order/weekreport/" + yearValue,
+                type: "GET",
+                dataType: 'json',
+                async: false,
+                success: function(res) {
+                    console.log(res);
+                    for (let index = 0; index < res.length; index++) {
+                        const element = res[index];
+                        week.push("Tuần " + element[0]);
+                        sumMoneyWeek.push(element[2]);
+                        // areaChartDataOrder.labels.push(element[0]);
+                        // areaChartDataOrder.datasets[0].data.push(element[2]);
+                    }
+
+                    var areaChartDataOrderWeek = {
+                            labels: week,
+                            datasets: [{
+                                label: 'Tổng tiền theo từng tuần',
+                                backgroundColor: 'rgba(60,141,188,0.9)',
+                                borderColor: 'rgba(60,141,188,0.8)',
+                                pointRadius: false,
+                                pointColor: '#3b8bba',
+                                pointStrokeColor: 'rgba(60,141,188,1)',
+                                pointHighlightFill: '#fff',
+                                pointHighlightStroke: 'rgba(60,141,188,1)',
+                                data: sumMoneyWeek
+                            }]
+                        }
+                        //-------------
+                        //- BAR CHART -
+                        //-------------
+                    var barChartCanvas = $('#barDateSumWeek').get(0).getContext('2d')
+                    var barChartData = $.extend(true, {}, areaChartDataOrderWeek)
+                    var temp0 = areaChartDataOrderWeek.datasets[0]
+                        // var temp1 = areaChartDataOrder.datasets[1]
+                    barChartData.datasets[0] = temp0
+
+                    var barChartOptions = {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        datasetFill: false
+                    }
+
+                    new Chart(barChartCanvas, {
+                        type: 'bar',
+                        data: barChartData,
+                        options: barChartOptions
+                    })
+
+
+                    var donutData = {
+                        labels: [
+                            'Chrome',
+                            'IE',
+                            'FireFox',
+                            'Safari',
+                            'Opera',
+                            'Navigator',
+                        ],
+                        datasets: [{
+                            data: [700, 500, 400, 600, 300, 100],
+                            backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+                        }]
+                    }
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,249 @@
+@import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+@import url(http://fonts.googleapis.com/css?family=Calibri:400,300,700);
+
+
+
+body {
+    background-color: #D32F2F;
+    /* font-family: 'Calibri', sans-serif !important */
+}
+
+fieldset,
+label {
+    margin: 0;
+    padding: 0
+}
+
+#productlist{
+    margin-top: 30px;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 10px
+}
+
+.thongTin{
+    margin-top: 0px;
+}
+
+.rating {
+    border: none;
+    margin-right: 49px
+}
+
+.myratings {
+    font-size: 85px;
+    color: green
+}
+
+.myreratings {
+    font-size: 85px;
+    color: green
+}
+
+.rating>[id^="star"] {
+    display: none
+}
+
+.rating>label:before {
+    margin: 5px;
+    font-size: 2.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005"
+}
+
+.rating>.half:before {
+    content: "\f089";
+    position: absolute
+}
+
+.rating>label {
+    color: #ddd;
+    float: right
+}
+
+.rating>[id^="star"]:checked~label,
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+    color: #FFD700
+}
+
+.rating>[id^="star"]:checked+label:hover,
+.rating>[id^="star"]:checked~label:hover,
+.rating>label:hover~[id^="star"]:checked~label,
+.rating>[id^="star"]:checked~label:hover~label {
+    color: #FFED85
+}
+
+.reset-option {
+    display: none
+}
+
+.reset-button {
+    margin: 6px 12px;
+    background-color: rgb(255, 255, 255);
+    text-transform: uppercase
+}
+.cardRating {
+    position: relative;
+    display: flex;
+    width: 455px;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #d2d2dc;
+    border-radius: 11px;
+    -webkit-box-shadow: 0px 0px 5px 0px rgb(249, 249, 250);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1);
+    box-shadow: 0px 0px 5px 0px rgb(161, 163, 164)
+}
+
+.card .card-body {
+    padding: 1rem 1rem
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem
+}
+
+p {
+    font-size: 14px
+}
+
+h4 {
+    margin-top: 18px
+}
+
+.btn:focus {
+    outline: none
+}
+
+.btn {
+    border-radius: 22px;
+    text-transform: capitalize;
+    font-size: 13px;
+    padding: 8px 19px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #D50000
+}
+
+.modelrating{
+    width: 1000px;
+}
+
+.mt-100{
+    margin-top: 70px;
+}
+
+.starmove{
+    margin-right: 100px;
+}
+
+fieldset#fieldsetRated {
+    width: 218px;
+}
+
+
+.hide {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+  a.text-dark:hover {
+	text-decoration: none;
+    color: #333333;
+}
+
+.input100 {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: black;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+span{
+    font-size: large;
+}
+
+span#stateinfo {
+    padding-left: 24px;
+}
+
+span#addressinfo {
+    padding-left: 80px;
+}
+
+span#birthdayinfo {
+    padding-left: 56px;
+}
+
+span#phoneinfo {
+    padding-left: 32px;
+}
+
+span#emailinfo {
+    padding-left: 90px;
+}
+
+span#fullnameinfo {
+    padding-left: 48px;
+}
+
+span#teninfo {
+    padding-left: 104px;
+    visibility: hidden;
+}
+
+span#usernameinfo {
+    padding-left: 19px;
+}
+
+hr.hrtag {
+    width: 535px;
+}
+
+button#btn-saveinfo {
+    margin-right: 240px;
+}
+
+span#hoinfo {
+    padding-left: 106px;
+    visibility: hidden;
+}
+
+
+
+input.w300{
+    width: 360px;
+    color: #000000d9;
+}
+
+select.w300{
+    width: 360px;
+    color: #000000d9;
+    font-family: inherit;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+@media screen and (max-width: 415px) {
+    button#btn-saveinfo {
+        margin-right: 30px;
+    } 
+ }

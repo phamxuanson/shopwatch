@@ -1,0 +1,2 @@
+// Summernote
+$('#summernote').summernote()
